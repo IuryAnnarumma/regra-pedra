@@ -159,10 +159,10 @@ df_firewall['tem_app5'] = df_firewall['Application'].str.contains("|".join(lista
 
 df_firewall['regra_any'] = (
     (
-        df_firewall['Source Address'].str.strip().str.lower().eq('any') | 
-        df_firewall['Destination Address'].str.strip().str.lower().eq('any')
+        padronizar_dados(df_firewall['Source Address']).eq('any') | 
+        padronizar_dados(df_firewall['Destination Address']).eq('any')
     ) &
-    (df_firewall['Action'].str.strip().str.lower() == 'allow')
+    (padronizar_dados(df_firewall['Action']) == 'allow')
 ).astype(int)
 
    #!!!!!! Complementar o código para que se pegue só any de regras "allow"
