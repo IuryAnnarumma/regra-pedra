@@ -210,7 +210,6 @@ with pd.ExcelWriter(arquivo_pronto, engine='openpyxl') as writer:
 # FAZER FUTURAMENTE: Criação automática de sub pastas que entendam qual cliente e localidade se trata, assim como o trimestre.
 # Baixar o arquivo em xlsx sem index gerado automaticamente
 
-# # RETIRAR O COMENTARIO DEPOIS ----->  
 
 print(f"Arquivo salvo em: {arquivo_pronto}")
 
